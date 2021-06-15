@@ -1,0 +1,11 @@
+.input {
+    display: block;
+    width: 150px;
+    height: 35px;
+}
+
+.label {
+    font-size: 15px;
+    text-align: center;
+    margin: 10px;
+}
