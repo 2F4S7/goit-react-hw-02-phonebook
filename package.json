@@ -54,8 +54,5 @@
     "node-sass": "^6.0.0",
     "prop-types": "^15.7.2",
     "react-github-btn": "^1.2.0"
-  },
-  "lint-staged": {
-    "*.js": "eslint --cache --fix"
   }
 }
