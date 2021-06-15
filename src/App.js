@@ -3,6 +3,7 @@ import './header/btn.module.css';
 
 import React, { Component } from 'react';
 import ContactForm from './components/ContactForm';
+import Section from './components/Section';
 // import ContactList from './components/ContactList';
 // import Filter from './components/Filter';
 
@@ -25,7 +26,9 @@ class App extends Component {
     return (
       <>
         <Btn title="React Home Work Phonebook 02" />
-        <ContactForm />
+        <Section title="Phonebook">
+          <ContactForm />
+        </Section>
       </>
     );
   }
