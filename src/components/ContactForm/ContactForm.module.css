@@ -1,16 +1,38 @@
+.form {
+    margin: 5px;
+}
+
+
 .label {
+    display: block;
     color: black;
-    font-size: 12px;
+    /* font-size: 15px; */
+    /* font-weight: 500; */
 
 }
 .input {
     display: block;
-    width: 100px;
     height: 25px;
 }
 
-/* .section {
-    display: flex;
-    flex-direction: column;
+.button {
+    display: block;
     align-items: center;
-} */
+    margin: 2px;
+    border: 1px solid black;
+    /* padding: 2px 5px; */
+    line-height: calc(26 / 16);
+    letter-spacing: 0.03em;
+    background-color: #f5f4fa;
+    border-radius: 12px;
+
+}
+
+.button:focus {
+    /* background-color: blueviolet; */
+    background-color: #2196f3;
+}
+
+.button:hover {
+    background-color: red;
+}

@@ -1,22 +1,22 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import style from './Section.module.css';
+import style from './Top.module.css';
 
-const Section = ({ title, children }) => {
+const Top = ({ title, children }) => {
   return (
-    <section className={style.section}>
+    <section className={style.top}>
       <h2 className={style.title}>{title}</h2>
       {children}
     </section>
   );
 };
 
-Section.defaultProps = {
+Top.defaultProps = {
   title: 'New section',
 };
 
-Section.propTypes = {
+Top.propTypes = {
   title: PropTypes.string,
 };
 
-export default Section;
+export default Top;

@@ -33,7 +33,7 @@ class ContactForm extends Component {
     const { handleSubmit, handleChange } = this;
 
     return (
-      <form onSubmit={handleSubmit}>
+      <form className={style.form} onSubmit={handleSubmit}>
         <label className={style.label}>
           Name
           <input

@@ -3,7 +3,8 @@ import './header/btn.module.css';
 
 import React, { Component } from 'react';
 import ContactForm from './components/ContactForm';
-import Section from './components/Section';
+import Top from './components/Section/Top';
+import Bottom from './components/Section/Bottom';
 import ContactList from './components/ContactList';
 import Filter from './components/Filter';
 
@@ -60,14 +61,14 @@ class App extends Component {
     return (
       <>
         <Btn title="React Home Work Phonebook 02" />
-        <Section title="Phonebook">
+        <Top title="Phonebook">
           <ContactForm onSubmit={formSubmitHandler} />
-        </Section>
+        </Top>
 
-        <Section title="Contacts">
+        <Bottom title="Contacts">
           <Filter value={filter} onChange={onChangeFilter} />
           <ContactList contacts={filteredContacts} onClick={deleteContact} />
-        </Section>
+        </Bottom>
       </>
     );
   }
