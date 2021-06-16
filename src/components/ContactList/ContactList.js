@@ -1,11 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import ContactItem from './ContactItem';
-// import style from './ContactList.module.css';
+import style from './ContactList.module.css';
 
 const ContactList = ({ contacts, onClick }) => {
   return (
-    <ul>
+    <ul className={style.form}>
       {contacts.map(contact => {
         const { id, name, number } = contact;
 
