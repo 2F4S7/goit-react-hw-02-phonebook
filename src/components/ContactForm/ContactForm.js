@@ -1,18 +1,39 @@
 import React, { Component } from 'react';
+import { v4 as uuidv4 } from 'uuid';
 import style from './ContactForm.module.css';
 
 class ContactForm extends Component {
   state = {
-    contact: [],
     name: '',
-    // number: '',
+    number: '',
+  };
+
+  handleChange = event => {
+    const { name, value } = event.target;
+
+    this.setState({
+      [name]: value,
+    });
+  };
+
+  handleSubmit = event => {
+    event.preventDefault();
+    const id = uuidv4();
+
+    this.props.onSubmit({ id: id, ...this.state });
+    this.resetForm();
+  };
+
+  resetForm = () => {
+    this.setState({ name: '', number: '' });
   };
 
   render() {
     const { name, number } = this.state;
+    const { handleSubmit, handleChange } = this;
 
     return (
-      <div className={style.section}>
+      <form onSubmit={handleSubmit}>
         <label className={style.label}>
           Name
           <input
@@ -23,6 +44,7 @@ class ContactForm extends Component {
             title="Имя может состоять только из букв, апострофа, тире и пробелов. Например Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan и т. п."
             required
             value={name}
+            onChange={handleChange}
           />
         </label>
 
@@ -36,9 +58,14 @@ class ContactForm extends Component {
             title="Номер телефона должен состоять цифр и может содержать пробелы, тире, круглые скобки и может начинаться с +"
             required
             value={number}
+            onChange={handleChange}
           />
         </label>
-      </div>
+
+        <button className={style.button} type="submit">
+          Add contact
+        </button>
+      </form>
     );
   }
 }
